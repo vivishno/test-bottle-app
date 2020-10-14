@@ -16,7 +16,7 @@ jobs:
      python-version: 3.7
   # install dependencies
   - name: python install
-    working-directory: wisdompets
+    working-directory: Application
     run: |
      sudo apt install python3.7-venv
      python -m venv --copies antenv
@@ -29,13 +29,13 @@ jobs:
      creds: ${{ secrets.AZURE_CREDENTIALS }}
   - uses: azure/appservice-settings@v1
     with:
-     app-name: vivekapp1
+     app-name: vivekbottle1
      general-settings-json: '{"linuxFxVersion": "PYTHON|3.7"}' #'General configuration settings as Key Value pairs'
   # deploy web app
   - uses: azure/webapps-deploy@v1
     with:
-     app-name: vivekapp1
-     package: wisdompets
+     app-name: vivekbottle1
+     package: Application
   # Azure logout
   - name: logout
     run: |
