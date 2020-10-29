@@ -29,13 +29,15 @@ jobs:
      creds: ${{ secrets.AZURE_CREDENTIALS }}
   - uses: azure/appservice-settings@v1
     with:
-     app-name: testbottleapp
+     app-name: testbottle
      general-settings-json: '{"linuxFxVersion": "PYTHON|3.7"}' #'General configuration settings as Key Value pairs'
   # deploy web app
   - uses: azure/webapps-deploy@v1
     with:
-     app-name: testbottleapp
+     app-name: testbottle
      package: Application
+     startup-command: gunicorn --bind=0.0.0.0 --timeout 600 app:wsgi_app
+
   # Azure logout
   - name: logout
     run: |
