@@ -1,5 +1,5 @@
 on:
- push: 
+ push:  
   branches:
    - master
 name: Build and deploy Python app
@@ -8,7 +8,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   # checkout the repo
-  - uses: actions/checkout@master
+  - uses: actions/checkout@master 
   # setup python
   - name: Setup Python
     uses: actions/setup-python@v1
