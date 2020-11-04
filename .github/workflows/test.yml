@@ -31,7 +31,7 @@ jobs:
     with:
      app-name: bottleapp01
      general-settings-json: '{"linuxFxVersion": "PYTHON|3.7"}' #'General configuration settings as Key Value pairs'
-  # deploy web app
+  # deploy web app 
   - uses: azure/webapps-deploy@v2
     with:
      app-name: bottleapp01
